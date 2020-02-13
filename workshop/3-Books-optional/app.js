@@ -43,7 +43,25 @@ const submitForm = () => {
     document.getElementById("url").value
   );
   homeLibrary.add(newBook);
-  renderBooks();
+  const card = document.createElement("div");
+  const subtitle = document.createElement("h2");
+  const bookImage = document.createElement("img");
+  bookImage.setAttribute("src", `${document.getElementById("url").value}`);
+  bookListDiv.appendChild(card);
+  card.appendChild(subtitle);
+  card.appendChild(bookImage);
+  bookImage.style.width = "100px";
+  bookImage.style.height = "150px";
+  card.classList.add("card");
+  card.style.width = "200px;";
+  card.style.display = "flex";
+  card.style.flexDirection = "column";
+  card.style.alignItems = "center";
+  card.style.justifyContent = "space-evenly";
+  subtitle.innerText = `${document.getElementById("title").value}\n`;
+  subtitle.style.fontSize = "15px";
+  card.style.width = "250px";
+  card.style.height = "250px";
 };
 
 // Last Book Read
