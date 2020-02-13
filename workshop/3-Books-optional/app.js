@@ -8,27 +8,43 @@ const bookListDiv = document.querySelector(".mybooks-list");
 const lastReadDiv = document.querySelector(".last-read");
 const currentlyReadingDiv = document.querySelector(".currently-reading");
 
-bookList.forEach(book => {
-  const card = document.createElement("div");
-  const subtitle = document.createElement("h2");
-  const bookImage = document.createElement("img");
-  bookImage.setAttribute("src", `${book.imageUrl}`);
-  bookListDiv.appendChild(card);
-  card.appendChild(subtitle);
-  card.appendChild(bookImage);
-  bookImage.style.width = "100px";
-  bookImage.style.height = "150px";
-  card.classList.add("card");
-  card.style.width = "200px;";
-  card.style.display = "flex";
-  card.style.flexDirection = "column";
-  card.style.alignItems = "center";
-  card.style.justifyContent = "space-evenly";
-  subtitle.innerText = `${book.title}\n`;
-  subtitle.style.fontSize = "15px";
-  card.style.width = "250px";
-  card.style.height = "250px";
-});
+const renderBooks = () => {
+  console.log(bookList.length);
+  bookList.forEach(book => {
+    const card = document.createElement("div");
+    const subtitle = document.createElement("h2");
+    const bookImage = document.createElement("img");
+    bookImage.setAttribute("src", `${book.imageUrl}`);
+    bookListDiv.appendChild(card);
+    card.appendChild(subtitle);
+    card.appendChild(bookImage);
+    bookImage.style.width = "100px";
+    bookImage.style.height = "150px";
+    card.classList.add("card");
+    card.style.width = "200px;";
+    card.style.display = "flex";
+    card.style.flexDirection = "column";
+    card.style.alignItems = "center";
+    card.style.justifyContent = "space-evenly";
+    subtitle.innerText = `${book.title}\n`;
+    subtitle.style.fontSize = "15px";
+    card.style.width = "250px";
+    card.style.height = "250px";
+  });
+};
+renderBooks();
+
+const submitForm = () => {
+  event.preventDefault();
+  const newBook = new Book(
+    document.getElementById("title").value,
+    document.getElementById("author").value,
+    document.getElementById("genre").value,
+    document.getElementById("url").value
+  );
+  homeLibrary.add(newBook);
+  renderBooks();
+};
 
 // Last Book Read
 const subtitleLastRead = document.createElement("h2");

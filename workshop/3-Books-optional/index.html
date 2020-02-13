@@ -11,10 +11,28 @@
     <title>Book Library</title>
   </head>
   <body>
-    <header class="header">
-      <h1>My Book Library</h1>
-      <a href="form.html" class="cta">Add a Book</a>
-    </header>
+    <h1>My Book Library</h1>
+    <form onsubmit="submitForm()">
+      <div class="form-example">
+        <label for="title">Enter the book title </label>
+        <input type="text" name="title" id="title" required />
+      </div>
+      <div class="form-example">
+        <label for="author">Enter the book author </label>
+        <input type="text" name="author" id="author" required />
+      </div>
+      <div class="form-example">
+        <label for="genre">Enter the book genre </label>
+        <input type="text" name="genre" id="genre" required />
+      </div>
+      <div class="form-example">
+        <label for="url">Enter the book image url </label>
+        <input type="url" name="url" id="url" required />
+      </div>
+      <div class="form-example">
+        <input id="add" type="submit" value="Add!" />
+      </div>
+    </form>
     <div class="updates">
       <div class="last-read">
         <h2>Last Book Read:</h2>
@@ -26,6 +44,5 @@
     <div class="mybooks-list" id="my-books"></div>
     <script src="books.js"></script>
     <script src="app.js"></script>
-    <script src="form.js"></script>
   </body>
 </html>
