@@ -108,12 +108,12 @@ homeLibrary.add(
   new Book("Orange", "romance", "Hello", true, "2020-02-05", "2020-02-10")
 );
 
-console.log(homeLibrary.booksRead);
-console.log(homeLibrary.booksUnread);
+// console.log(homeLibrary.booksRead);
+// console.log(homeLibrary.booksUnread);
 
-homeLibrary.startReading("Why We Hate Cheap Things");
+// homeLibrary.startReading("Why We Hate Cheap Things");
 
-console.log(homeLibrary.books);
+// console.log(homeLibrary.books);
 
-homeLibrary.finishReading("The Money Mafia: A World in Crisis");
-console.log(homeLibrary.books);
+// homeLibrary.finishReading("The Money Mafia: A World in Crisis");
+// console.log(homeLibrary.books);
